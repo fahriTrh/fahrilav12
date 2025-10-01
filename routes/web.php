@@ -8,41 +8,18 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return "
-        <h1>Halaman About</h1>
-        <a href='/'>Home</a>
-        <a href='/profile'>Profile</a>
-        <a href='/mahasiswa'>Mahasiswa</a>
-        <a href='/contact'>Contact</a>
-        ";
-});
-
-Route::get('/profile', function () {
-    return "
-        <h1>Halaman Profile</h1>
-        <a href='/'>Home</a>
-        <a href='/about'>About</a>
-        <a href='/mahasiswa'>Mahasiswa</a>
-        <a href='/contact'>Contact</a>
-    ";
+    return view('about');
 });
 
 Route::get('/mahasiswa', function () {
-    return "
-        <h1>Halaman Mahasiswa</h1>
-        <a href='/'>Home</a>
-        <a href='/about'>About</a>
-        <a href='/profile'>Profile</a>
-        <a href='/contact'>Contact</a>
-    ";
+    return view('mahasiswa');
+});
+
+Route::get('/profile', function () {
+    $name = 'Fakhri Alauddin Tarihoran';
+    return view('profile')->with(['name' => $name]);
 });
 
 Route::get('/contact', function () {
-    return "
-        <h1>Halaman Contact</h1>
-        <a href='/'>Home</a>
-        <a href='/about'>About</a>
-        <a href='/profile'>Profile</a>
-        <a href='/mahasiswa'>Mahasiswa</a>
-    ";
+    return view('contact');
 });

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\FirstController;
+use App\Http\Controllers\Mahasiswa\MahasiswaController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
     return view('welcome');
 });
 
@@ -23,3 +24,6 @@ Route::get('/profile', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+
+Route::get('/manage-mahasiswa', [MahasiswaController::class, 'manage']);

@@ -25,5 +25,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/uts-laravel', function () {
+    $page_title = 'Home';
+    return view('uts.home', compact('page_title'));
+});
 
 Route::get('/manage-mahasiswa', [MahasiswaController::class, 'manage']);

@@ -18,6 +18,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- sidebar -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">

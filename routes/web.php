@@ -51,4 +51,9 @@ Route::get('/uts-produk', function () {
     return view('uts.produk', compact('page_title', 'products'));
 });
 
+Route::get('/uts-tambah-produk', function () {
+    $page_title = 'Form Tambah Produk';
+    return view('uts.form-tambah-produk', compact('page_title'));
+});
+
 Route::get('/manage-mahasiswa', [MahasiswaController::class, 'manage']);

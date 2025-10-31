@@ -30,4 +30,25 @@ Route::get('/uts-laravel', function () {
     return view('uts.home', compact('page_title'));
 });
 
+Route::get('/uts-produk', function () {
+    $page_title = 'Produk';
+
+    $products = [
+        [
+            "kode_produk" => "BRG001",
+            "nama_produk" => "Pena",
+            "jenis_produk" => "Alat Tulis",
+            "harga_produk" => 20000
+        ],
+        [
+            "kode_produk" => "BRG002",
+            "nama_produk" => "Buku",
+            "jenis_produk" => "Alat Tulis",
+            "harga_produk" => 15000
+        ]
+    ];
+
+    return view('uts.produk', compact('page_title', 'products'));
+});
+
 Route::get('/manage-mahasiswa', [MahasiswaController::class, 'manage']);

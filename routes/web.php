@@ -25,6 +25,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/manage-mahasiswa', [MahasiswaController::class, 'manage']);
+
+
+// JAWABN UTS
 Route::get('/uts-laravel', function () {
     $page_title = 'Home';
     return view('uts.home', compact('page_title'));
@@ -53,7 +57,16 @@ Route::get('/uts-produk', function () {
 
 Route::get('/uts-tambah-produk', function () {
     $page_title = 'Form Tambah Produk';
-    return view('uts.form-tambah-produk', compact('page_title'));
+    $products_type = [
+        [
+            "jenis" => "Alat Tulis"
+        ],
+        [
+            "jenis" => "Elektronik"
+        ],
+        [
+            "jenis" => "Sembako"
+        ],
+    ];
+    return view('uts.form-tambah-produk', compact('page_title', 'products_type'));
 });
-
-Route::get('/manage-mahasiswa', [MahasiswaController::class, 'manage']);
